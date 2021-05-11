@@ -24,6 +24,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\MyNewApp.Shared\MyNewApp.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="MyResources\AppResources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
