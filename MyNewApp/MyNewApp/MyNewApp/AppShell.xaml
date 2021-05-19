@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:font="clr-namespace:MyNewApp.Fonts"
     xmlns:local="clr-namespace:MyNewApp.Views"
+    xmlns:stundenView="clr-namespace:MyNewApp.Views.Stunden"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     Title="MyNewApp">
 
@@ -87,6 +88,18 @@
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
+
+    <FlyoutItem Title="Überstunden Rechner">
+        <FlyoutItem.Icon>
+            <FontImageSource
+                FontFamily="{StaticResource Fontfamily}"
+                Glyph="{x:Static font:FontIconClass.Calculator}"
+                Color="{StaticResource IconColor}" />
+        </FlyoutItem.Icon>
+        <!--<ShellContent ContentTemplate="{DataTemplate stundenView:StundenAnsichtPage}" Route="MainPage" />-->
+        <ShellContent ContentTemplate="{DataTemplate stundenView:StundenBerechnenPage}" Route="MainPage" />
+    </FlyoutItem>
+
     <FlyoutItem Title="{xct:Translate Home}">
         <FlyoutItem.Icon>
             <FontImageSource
@@ -96,6 +109,8 @@
         </FlyoutItem.Icon>
         <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
     </FlyoutItem>
+
+
 
     <!--  When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
     <MenuItem

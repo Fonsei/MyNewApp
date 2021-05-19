@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MyNewApp.Views.Stunden.StundenAnsichtPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:view="clr-namespace:MyNewApp.Views.Stunden"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+    <xct:TabView TabStripPlacement="Bottom">
+        <xct:TabViewItem Text="Test 1">
+            <xct:TabViewItem.Content>
+                <StackLayout>
+                    <Label Text="test 2" />
+                </StackLayout>
+            </xct:TabViewItem.Content>
+        </xct:TabViewItem>
+
+        <xct:TabViewItem Text="Test 2">
+            <xct:TabViewItem.Content>
+                <StackLayout>
+                    <Label Text="test 2" />
+                </StackLayout>
+            </xct:TabViewItem.Content>
+        </xct:TabViewItem>
+    </xct:TabView>
+</ContentPage>
