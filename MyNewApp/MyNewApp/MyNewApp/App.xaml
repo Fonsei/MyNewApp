@@ -29,11 +29,20 @@
             <Color x:Key="Primary">#302c2c</Color>
             <!--2196F3</Color>-->
 
+            <Color x:Key="TextColor">Black</Color>
+            <Color x:Key="TextColorDark">White</Color>
+
             <Color x:Key="IconColor">#000</Color>
-            <Color x:Key="BackgroudnColor">#302c2c</Color>
-            <Style TargetType="Label">
+
+            <Color x:Key="BackgroudnColor">White</Color>
+            <Color x:Key="BackgroudnColorDark">#302c2c</Color>
+
+            <Color x:Key="CardBackground">White</Color>
+            <Color x:Key="CardBackgroundDark">#1C1C1E</Color>
+
+            <!--<Style TargetType="Label">
                 <Setter Property="TextColor" Value="Black" />
-            </Style>
+            </Style>-->
             <Style TargetType="Entry">
                 <Setter Property="TextColor" Value="Black" />
             </Style>
@@ -66,6 +75,44 @@
             <Style TargetType="xct:TabViewItem">
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+            </Style>
+
+            <Style x:Key="BaseLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextColorDark}, Light={StaticResource TextColor}}" />
+
+            </Style>
+
+            <Style
+                x:Key="LabelMicro"
+                BasedOn="{StaticResource BaseLabel}"
+                TargetType="Label">
+                <Setter Property="FontSize" Value="Micro" />
+            </Style>
+            <Style
+                x:Key="LabelSmall"
+                BasedOn="{StaticResource BaseLabel}"
+                TargetType="Label">
+                <Setter Property="FontSize" Value="Small" />
+            </Style>
+
+            <Style x:Key="MyCard" TargetType="Frame">
+                <Setter Property="HasShadow" Value="{OnPlatform Android=true, iOS=false, Default=true}" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource CardBackgroundDark}, Light={StaticResource CardBackground}}" />
+            </Style>
+
+            <Style
+                x:Key="LabelMedium"
+                BasedOn="{StaticResource BaseLabel}"
+                TargetType="Label">
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+
+            <Style
+                x:Key="LabelLarge"
+                BasedOn="{StaticResource BaseLabel}"
+                TargetType="Label">
+                <Setter Property="FontSize" Value="Large" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

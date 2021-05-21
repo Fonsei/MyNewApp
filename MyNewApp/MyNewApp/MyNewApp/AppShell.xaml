@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:font="clr-namespace:MyNewApp.Fonts"
     xmlns:local="clr-namespace:MyNewApp.Views"
+    xmlns:localsettings="clr-namespace:MyNewApp.Views.Einstellungen"
     xmlns:stundenView="clr-namespace:MyNewApp.Views.Stunden"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     Title="MyNewApp">
@@ -110,7 +111,15 @@
         <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
     </FlyoutItem>
 
-
+    <FlyoutItem Title="Einstellungen">
+        <FlyoutItem.Icon>
+            <FontImageSource
+                FontFamily="{StaticResource Fontfamily}"
+                Glyph="{x:Static font:FontIconClass.Cog}"
+                Color="{StaticResource IconColor}" />
+        </FlyoutItem.Icon>
+        <ShellContent ContentTemplate="{DataTemplate localsettings:EinstellungenPage}" Route="SettingsPage" />
+    </FlyoutItem>
 
     <!--  When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
     <MenuItem

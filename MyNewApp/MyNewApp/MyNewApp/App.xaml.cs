@@ -1,9 +1,11 @@
 ﻿//using MyNewApp.Services;
+using MyNewApp.Helpers;
 using MyNewApp.Services;
 using MyNewApp.Views;
 using System;
 using System.Globalization;
 using Xamarin.CommunityToolkit.Helpers;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -31,6 +33,9 @@ namespace MyNewApp
             LocalizationResourceManager.Current.Init(MyResources.AppResources.ResourceManager);
 
             InitializeComponent();
+
+            TheTheme.SetTheme();
+
             cultureInfo = CultureInfo;
             CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
             LocalizationResourceManager.Current.SetCulture(CultureInfo);
@@ -41,14 +46,27 @@ namespace MyNewApp
 
         protected override void OnStart()
         {
+            OnResume();
         }
 
         protected override void OnSleep()
         {
+            TheTheme.SetTheme();
+            RequestedThemeChanged -= App_RequestedThemeChanged;
         }
 
         protected override void OnResume()
         {
+            TheTheme.SetTheme();
+            RequestedThemeChanged += App_RequestedThemeChanged;
+        }
+
+        private void App_RequestedThemeChanged(object sender, AppThemeChangedEventArgs e)
+        {
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                TheTheme.SetTheme();
+            });
         }
     }
 }
