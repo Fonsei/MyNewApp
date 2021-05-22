@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.CommunityToolkit.Extensions;
+using Xamarin.CommunityToolkit.UI.Views.Options;
 
 namespace MyNewApp.Views.Einstellungen
 {
@@ -67,6 +69,47 @@ namespace MyNewApp.Views.Einstellungen
             }
 
             TheTheme.SetTheme();
+        }
+
+        async void Button_Clicked(object sender, EventArgs e)
+        {
+            var actions = new SnackBarActionOptions
+            {
+                Action = () => DisplayAlert("Test","Hallo","OK"),
+                Text = "OK",
+                ForegroundColor = Color.White,
+                BackgroundColor = Color.Gray, 
+                Padding = new Thickness(10)
+            };
+
+            var options = new SnackBarOptions
+            {
+                MessageOptions = new MessageOptions
+                {
+                    Foreground = Color.White,
+                    Message = "Willst du das ?"
+                },
+                BackgroundColor = Color.Gray,
+                Duration = TimeSpan.FromSeconds(10),
+                Actions = new[] { actions },
+                IsRtl = true
+            };
+
+            await this.DisplaySnackBarAsync(options);
+
+
+            //var toast = new ToastOptions
+            //{
+            //    BackgroundColor = Color.Green,
+            //    Duration = TimeSpan.FromSeconds(10),
+            //    MessageOptions = new MessageOptions
+            //    {
+            //        Foreground = Color.White,
+            //        Message = "Hallo Welt"
+            //    }
+            //};
+
+            //await this.DisplayToastAsync(toast);
         }
     }
 }

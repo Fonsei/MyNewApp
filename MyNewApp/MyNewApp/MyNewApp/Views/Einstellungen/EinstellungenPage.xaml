@@ -79,18 +79,19 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView>
-            <!--<Grid Padding="12" ColumnDefinitions=".05*,.9,.05*">-->
-            <StackLayout Grid.Column="1" Padding="12">
-                <Label
-                    Margin="0,12,0,0"
-                    Style="{DynamicResource LabelMedium}"
-                    Text="THEME" />
-                <Frame Style="{DynamicResource MyCard}">
-                    <StackLayout
-                        HorizontalOptions="Center"
-                        Orientation="Horizontal"
-                        VerticalOptions="Center">
-                        <!--<RadioButton
+            <StackLayout>
+                <!--<Grid Padding="12" ColumnDefinitions=".05*,.9,.05*">-->
+                <StackLayout Grid.Column="1" Padding="12">
+                    <Label
+                        Margin="0,12,0,0"
+                        Style="{DynamicResource LabelMedium}"
+                        Text="THEME" />
+                    <Frame Style="{DynamicResource MyCard}">
+                        <StackLayout
+                            HorizontalOptions="Center"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <!--<RadioButton
                                 x:Name="RadioButtonSystem"
                                 Grid.Column="1"
                                 CheckedChanged="Test_CheckedChanged"
@@ -105,60 +106,64 @@
                                     </StackLayout>
                                 </RadioButton.Content>
                             </RadioButton>-->
-                        <RadioButton
-                            x:Name="RadioButtonSystem"
-                            Grid.Column="0"
-                            CheckedChanged="RadioButton_CheckedChanged"
-                            ControlTemplate="{StaticResource ThemeRadioTemplate}"
-                            CornerRadius="10"
-                            IsChecked="True"
-                            Value="System">
-                            <RadioButton.Content>
-                                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                                    <Image Scale="0.75" Source="{FontImage FontFamily=FAS, Glyph={x:Static helpers:FontAwesomeIcons.UserCog}, Color=#323130}" />
-                                    <Label
-                                        FontSize="Small"
-                                        Text="System"
-                                        TextColor="#323130" />
-                                </StackLayout>
-                            </RadioButton.Content>
-                        </RadioButton>
-                        <RadioButton
-                            x:Name="RadioButtonLight"
-                            Grid.Column="1"
-                            CheckedChanged="RadioButton_CheckedChanged"
-                            ControlTemplate="{StaticResource ThemeRadioTemplate}"
-                            Value="Light">
-                            <RadioButton.Content>
-                                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                                    <Image Scale="0.75" Source="{FontImage FontFamily=FAS, Glyph={x:Static font:FontAwesomeIcons.Sun}, Color=#323130}" />
-                                    <Label
-                                        FontSize="Small"
-                                        Text="Light"
-                                        TextColor="#323130" />
-                                </StackLayout>
-                            </RadioButton.Content>
-                        </RadioButton>
-                        <RadioButton
-                            x:Name="RadioButtonDark"
-                            Grid.Column="2"
-                            CheckedChanged="RadioButton_CheckedChanged"
-                            ControlTemplate="{StaticResource ThemeRadioTemplate}"
-                            Value="Dark">
-                            <RadioButton.Content>
-                                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                                    <Image Scale="0.75" Source="{FontImage FontFamily=FAS, Glyph={x:Static font:FontAwesomeIcons.Moon}, Color=#323130}" />
-                                    <Label
-                                        FontSize="Small"
-                                        Text="Dark"
-                                        TextColor="#323130" />
-                                </StackLayout>
-                            </RadioButton.Content>
-                        </RadioButton>
-                    </StackLayout>
-                </Frame>
+                            <RadioButton
+                                x:Name="RadioButtonSystem"
+                                Grid.Column="0"
+                                CheckedChanged="RadioButton_CheckedChanged"
+                                ControlTemplate="{StaticResource ThemeRadioTemplate}"
+                                CornerRadius="10"
+                                IsChecked="True"
+                                Value="System">
+                                <RadioButton.Content>
+                                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                        <Image Scale="0.75" Source="{FontImage FontFamily=FAS, Glyph={x:Static helpers:FontAwesomeIcons.UserCog}, Color=#323130}" />
+                                        <Label
+                                            FontSize="Small"
+                                            Text="System"
+                                            TextColor="#323130" />
+                                    </StackLayout>
+                                </RadioButton.Content>
+                            </RadioButton>
+                            <RadioButton
+                                x:Name="RadioButtonLight"
+                                Grid.Column="1"
+                                CheckedChanged="RadioButton_CheckedChanged"
+                                ControlTemplate="{StaticResource ThemeRadioTemplate}"
+                                Value="Light">
+                                <RadioButton.Content>
+                                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                        <Image Scale="0.75" Source="{FontImage FontFamily=FAS, Glyph={x:Static font:FontAwesomeIcons.Sun}, Color=#323130}" />
+                                        <Label
+                                            FontSize="Small"
+                                            Text="Light"
+                                            TextColor="#323130" />
+                                    </StackLayout>
+                                </RadioButton.Content>
+                            </RadioButton>
+                            <RadioButton
+                                x:Name="RadioButtonDark"
+                                Grid.Column="2"
+                                CheckedChanged="RadioButton_CheckedChanged"
+                                ControlTemplate="{StaticResource ThemeRadioTemplate}"
+                                Value="Dark">
+                                <RadioButton.Content>
+                                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                        <Image Scale="0.75" Source="{FontImage FontFamily=FAS, Glyph={x:Static font:FontAwesomeIcons.Moon}, Color=#323130}" />
+                                        <Label
+                                            FontSize="Small"
+                                            Text="Dark"
+                                            TextColor="#323130" />
+                                    </StackLayout>
+                                </RadioButton.Content>
+                            </RadioButton>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <!--</Grid>-->
+                <StackLayout>
+                    <Button Clicked="Button_Clicked" Text="Speichern" />
+                </StackLayout>
             </StackLayout>
-            <!--</Grid>-->
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
